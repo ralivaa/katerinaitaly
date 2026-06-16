@@ -28,7 +28,6 @@
 
   html { scroll-behavior: smooth; }
 
-  /* ── BODY ── */
   body {
     font-family: 'Cormorant Infant', serif;
     background-color: var(--cream);
@@ -37,6 +36,7 @@
     line-height: 1.7;
     overflow-x: hidden;
   }
+
   .flag-stripe {
     height: 4px;
     background: linear-gradient(to right,
@@ -152,7 +152,6 @@
     font-family: serif;
   }
 
-  /* ── SCROLL REVEAL ── */
   .reveal {
     opacity: 0;
     transform: translateY(28px);
@@ -166,7 +165,6 @@
     .reveal { opacity: 1; transform: none; transition: none; }
   }
 
-  /* ── ORNAMENTAL DIVIDER ── */
   .section-divider {
     display: flex;
     align-items: center;
@@ -219,7 +217,6 @@
     margin-bottom: 1.5rem;
   }
 
-  /* ── IMPROVED HERO TYPOGRAPHY ── */
   .hero-title {
     font-family: 'Cormorant Infant', serif;
     font-size: clamp(2.8rem, 4.5vw, 5rem);
@@ -230,24 +227,6 @@
     position: relative;
   }
   .hero-title .red { color: var(--italy-red); font-style: italic; }
-
-  /* Large decorative Italian quote behind hero text */
-  .hero-left::before {
-    content: 'Italia';
-    position: absolute;
-    bottom: 6rem;
-    left: 3rem;
-    font-family: 'Cormorant Infant', serif;
-    font-size: clamp(5rem, 9vw, 11rem);
-    font-weight: 300;
-    font-style: italic;
-    color: rgba(184, 145, 58, 0.07);
-    line-height: 1;
-    pointer-events: none;
-    user-select: none;
-    z-index: 1;
-    white-space: nowrap;
-  }
 
   .hero-tagline {
     font-family: 'Cormorant Infant', serif;
@@ -310,7 +289,6 @@
     background: linear-gradient(to right, var(--cream) 0%, transparent 30%);
   }
 
-  /* ── МУЗИКА ── */
   .music-btn {
     position: fixed;
     bottom: 1.5rem;
@@ -351,7 +329,6 @@
   }
   .music-btn:hover + .music-tooltip { opacity: 1; }
 
-  /* ── SECTIONS ── */
   .section {
     padding: 5rem 3rem;
     max-width: 1200px;
@@ -736,9 +713,7 @@
     line-height: 1.3;
   }
 
-  .section-videos {
-    position: relative;
-  }
+  .section-videos { position: relative; }
 
   .section-videos::before,
   .section-videos::after {
@@ -802,10 +777,7 @@
   .contact-section::before { left: 2rem; }
   .contact-section::after { right: 2rem; }
 
-  .contact-inner {
-    max-width: 600px;
-    margin: 0 auto;
-  }
+  .contact-inner { max-width: 600px; margin: 0 auto; }
 
   .contact-intro {
     font-family: 'Cormorant Infant', serif;
@@ -934,11 +906,7 @@
     font-weight: 400;
     letter-spacing: 0.04em;
   }
-  .footer-links {
-    display: flex;
-    gap: 1.5rem;
-    align-items: center;
-  }
+  .footer-links { display: flex; gap: 1.5rem; align-items: center; }
 
   .center-text { text-align: center; margin-top: 1.5rem; }
 
@@ -959,12 +927,8 @@
     .nav-hamburger { display: flex; }
 
     .hero { grid-template-columns: 1fr; min-height: auto; }
-    /* On mobile, image is smaller and text comes first */
     .hero-right { height: 55vw; min-height: 220px; order: -1; }
-    .hero-left {
-      padding: 2rem 1.5rem 3rem;
-      /* Hide the decorative watermark on mobile */
-    }
+    .hero-left { padding: 2rem 1.5rem 3rem; }
     .hero-left::before { display: none; }
     .hero-overlay { background: linear-gradient(to bottom, transparent 0%, var(--cream) 80%); }
     .hero-title { font-size: clamp(2.2rem, 7vw, 3.5rem); }
@@ -1002,30 +966,48 @@
   }
 
   @media (max-width: 600px) {
-    body { font-size: 24px; }
+    body { font-size: 22px; }
+
     .btn-primary, .btn-outline, .btn-white {
-      font-size: 0.95rem !important;
-      padding: 0.85rem 2.2rem !important;
-      font-weight: normal !important;
-      letter-spacing: 0.12em !important;
+      font-size: 1.25rem;
+      padding: 1.1rem 2rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      display: block;
+      text-align: center;
     }
+
     .hero-eyebrow { font-size: 1rem; letter-spacing: 0.1em; }
-    .course-desc { font-size: 1.25rem; }
-    .course-includes li { font-size: 1.2rem; }
-    .course-price { font-size: 1.5rem; }
-    .review-text { font-size: 1.35rem; }
-    .about-text { font-size: 1.25rem; }
-    .about-wrap div[style] p { font-size: 1.25rem; line-height: 1.6; }
-    .hero-tagline { font-size: 1.55rem; }
-    .video-title { font-size: 1.4rem; }
-    .video-category { font-size: 1.05rem; }
-    .section-intro { font-size: 1.35rem; }
-    .course-level-tag { font-size: 1.05rem; }
-    .course-subtitle { font-size: 1.2rem; }
-    .about-label { font-size: 1rem; }
+    .hero-tagline { font-size: 1.4rem; }
+    .hero-title { font-size: clamp(2rem, 9vw, 3rem); }
+
     .section-label { font-size: 1rem; }
+    .section-intro { font-size: 1.2rem; }
+
+    .about-label { font-size: 1rem; }
+    .about-text { font-size: 1.15rem; }
+    .about-wrap div[style] p { font-size: 1.15rem; line-height: 1.7; }
+    .social-link { font-size: 1.2rem; }
+
+    .course-level-tag { font-size: 1rem; }
+    .course-subtitle { font-size: 1.15rem; }
+    .course-desc { font-size: 1.15rem; }
+    .course-includes li { font-size: 1.1rem; }
+    .course-price { font-size: 1.8rem; }
+
+    .review-text { font-size: 1.2rem; }
     .review-author { font-size: 1.05rem; }
     .review-city { font-size: 1rem; }
+
+    .video-category { font-size: 1rem; }
+    .video-title { font-size: 1.25rem; }
+
+    .contact-intro { font-size: 1.15rem; }
+    .contact-email { font-size: 1.1rem; }
+    .contact-social-label { font-size: 1rem; }
+
+    .cta-sub { font-size: 1.15rem; }
+
     .videos-grid { grid-template-columns: 1fr; }
     .courses-grid { max-width: 100%; grid-template-columns: 1fr; }
     .course-card { padding: 1.5rem; }
@@ -1033,14 +1015,12 @@
     .reviews-grid { grid-template-columns: 1fr; }
     .about-social { gap: 1rem; }
     .quote-section { padding: 3rem 1.5rem; }
-    .contact-email { font-size: 1rem; }
     .music-tooltip { display: none; }
   }
 </style>
 </head>
 <body>
 
-<!-- МУЗИКА -->
 <audio id="bgMusic" loop>
   <source src="muzika.mp3" type="audio/mpeg">
 </audio>
@@ -1068,7 +1048,6 @@
   }
 </script>
 
-<!-- SCROLL REVEAL SCRIPT -->
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const reveals = document.querySelectorAll('.reveal');
@@ -1114,7 +1093,6 @@
   <a href="#contact" onclick="document.getElementById('mobileMenu').classList.remove('open')">Контакт</a>
 </div>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-left">
     <p class="hero-eyebrow">
@@ -1142,7 +1120,6 @@
 </section>
 <div class="section-divider"><span class="section-divider-sym">✦ ✦ ✦</span></div>
 
-<!-- ЗА МЕН -->
 <section class="about-wrap" id="about">
   <div class="about-inner">
     <div style="position:relative;" class="reveal">
@@ -1178,7 +1155,6 @@
 </section>
 <div class="section-divider"><span class="section-divider-sym">✦ ✦ ✦</span></div>
 
-<!-- КУРСОВЕ -->
 <section class="section" id="courses">
   <p class="section-label reveal">Онлайн обучение</p>
   <h2 class="section-title reveal">Курсове по <em>италиански език</em></h2>
@@ -1238,7 +1214,6 @@
 </section>
 <div class="section-divider"><span class="section-divider-sym">✦ ✦ ✦</span></div>
 
-<!-- ОТЗИВИ -->
 <section class="reviews-section" id="reviews">
   <div class="reviews-inner">
     <p class="reviews-label reveal">Отзиви</p>
@@ -1285,7 +1260,6 @@
 </section>
 <div class="section-divider"><span class="section-divider-sym">✦ ✦ ✦</span></div>
 
-<!-- ВИДЕА -->
 <section class="section section-videos" id="videos">
   <p class="section-label reveal">Видеа от Рим</p>
   <h2 class="section-title reveal">Разходки, рецепти & <em>история</em></h2>
@@ -1354,12 +1328,10 @@
 
 <div class="section-divider"><span class="section-divider-sym">✦ ✦ ✦</span></div>
 
-<!-- КОНТАКТ -->
 <section class="contact-section" id="contact">
   <div class="contact-inner reveal">
     <p class="section-label" style="text-align:center;">Свържи се с мен</p>
     <h2 class="section-title" style="margin-bottom:1rem;">Имаш <em>въпрос?</em></h2>
-
     <p class="contact-intro">Пиши ми свободно на <a href="mailto:katerina.georgieva@tiscali.it" class="contact-email">katerina.georgieva@tiscali.it</a></p>
     <div class="contact-divider"></div>
     <p class="contact-social-label">или ме намери в социалните мрежи</p>
